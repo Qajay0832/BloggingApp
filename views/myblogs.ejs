@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Blog</title>
+    <%- include('./partials/style.ejs') %>
+</head>
+
+<body>
+    <%- include('./partials/topbar.ejs') %>
+        <a class="add-button" href="/addblog">Add Blog</a>
+        <% if(message) { %>
+            <p>
+                <%= message %>
+            </p>
+            <% } %>
+                <% if(blogData.length>0){
+                    for(let i=0;i<blogData.length;i++){ %>
+                        <div class="blog-card">
+                            <div class="blog-title">
+                                <%=blogData[i].title%>
+                            </div>
+                            <div class="blog-body">
+                                <%=blogData[i].body%>
+                            </div>
+                        </div>
+                        <%} }%>
+
+
+</body>
+
+</html>
